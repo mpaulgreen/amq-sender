@@ -51,8 +51,9 @@ public class Sender {
 			Context context = new InitialContext();
 
 			ConnectionFactory factory = (ConnectionFactory) context.lookup("publishSubscribeFactory");
-			Connection connection = factory.createConnection(System.getProperty("USER"),
-					System.getProperty("PASSWORD"));
+//			Connection connection = factory.createConnection(System.getProperty("USER"),
+//					System.getProperty("PASSWORD"));
+			Connection connection = factory.createConnection();
 
 			connection.setExceptionListener(new MyExceptionListener());
 			connection.start();
